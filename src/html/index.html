@@ -4,11 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/index.css">
     <title>坦克大战</title>
 </head>
 <body>
-    <div>
+    <div id="walls">
+        <div id="topWalls"></div>
+        <div id="leftWalls"></div>
+        <div id="floor">
+            <div id="water1"></div>
+            <div id="home_wall1"></div>
+            <div id="water2"></div>
+            <div id="grass1"></div>
+        </div>
+        <div id="rightWalls"></div>
+        <div id="downWalls"></div>
+    </div>
+    <div id="tank">
         
     </div>
 </body>
+<script src="../js/component.js"></script>
+<script src="../js/bullet.js"></script>
+<script src="../js/tank.js"></script>
+<script src="../js/wall.js"></script>
+<script src="../js/grass.js"></script>
+<script src="../js/water.js"></script>
+<script src="../js/comment.js"></script>
+<script>
+    //填充上边的墙(钢板)
+    const topWalls = document.querySelector('#topWalls');
+    getWalls(topWalls, 1, 2);
+
+    //填充左边的墙(钢板)
+    const leftWalls = document.querySelector('#leftWalls');
+    getWalls(leftWalls, 2, 2);
+
+    //填充右边的墙(钢板)
+    const rightWalls = document.querySelector('#rightWalls');
+    getWalls(rightWalls, 2, 2);
+
+    //填充下边的墙(钢板)
+    const downWalls = document.querySelector('#downWalls');
+    getWalls(downWalls, 1, 2);
+
+    //画其他墙
+    const wall1 = document.querySelector('#home_wall1');
+    getWalls(wall1, 1, 1);
+
+    //画掩体，草丛
+    const grass1 = document.querySelector('#grass1');
+    getGrass(grass1, 2, 3);
+
+    //河流
+    const water1 = document.querySelector('#water1');
+    getWater(water1, 2, 1);
+    const water2 = document.querySelector('#water2');
+    getWater(water2, 2, 1);
+</script>
 </html>

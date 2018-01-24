@@ -1,13 +1,14 @@
-class Tank
+class Tank extends Component
 {
     //坦克下蛋(初始化)
-    constructor () {
-        this.life = 5; //生命值
-        this.x = 0;
-        this.y = 0;
-        this.bullet = new Bullet({type:1, count:'x'}); //子弹类型,数量.x表示无限制
-        this.launchSpeed = 20;  //打出的子弹一秒钟移动的距离
-        this.runSpeed = 10;　//坦克一秒钟走过的距离
+    constructor ({x, y, life, bullet, launchSpeed, runSpeed}) {
+        super();
+        this.x = x;     //横坐标范围
+        this.y = y;     //纵坐标范围
+        this.life = life; //生命值
+        this.bullet = bullet; //子弹类型,数量.x表示无限制
+        this.launchSpeed = launchSpeed;  //打出的子弹一秒钟移动的距离
+        this.runSpeed = runSpeed;　//坦克一秒钟走过的距离
     }
 
     //biubiubiu~ 发射子弹
@@ -19,7 +20,7 @@ class Tank
     }
 
     //啊!宝宝被打中了
-    shotdown () {
+    shutdown ({bullet: bullet}) {
         //子弹坐标与坦克坐标重合
         if ((this.x === this.bullet.x) && (this.y === this.bullet.y)) {
             //播放爆炸动画，声音.
@@ -28,9 +29,25 @@ class Tank
         }
     }
 
+    render () {
+        //生成一个随机码作为坦克的编号
+        let tank_id = Math.random();
+        this.el = this.string2Dom(`
+            <div class="tank" data-tank-id=${tank_id}></div>
+        `);
+        //添加移动事件
+        this.el.addEventListener('keyWord', this.run.bind(this));
+
+        return this.el;
+    }
+
+    run () {
+
+    }
+
     //秘技，反复横跳~上移
     up() {
-        //打不到我略略略 
+        //你打不到我的脸哦.略略略 
     }
 
     //秘技，反复横跳~下移
@@ -47,4 +64,6 @@ class Tank
     right() {
 
     }
+
+
 }
