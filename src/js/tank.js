@@ -33,7 +33,7 @@ class Tank extends Component
         //生成一个随机码作为坦克的编号
         let tank_id = Math.random();
         this.el = this.string2Dom(`
-            <div class="tank" data-tank-id=${tank_id}></div>
+            <div class="tank" style="margin-left:${this.x}px; margin-top:${this.y}px" data-tank-id=${tank_id}></div>
         `);
         //添加移动事件
         this.el.addEventListener('keyWord', this.run.bind(this));
