@@ -1,0 +1,94 @@
+#walls {
+    height: 720px;
+    width: 1110px;
+}
+
+#topWalls {
+    height: 60px;
+    width: 1110px;
+}
+
+#leftWalls {
+    width: 60px;
+    height: 600px;
+    float: left;
+}
+
+#rightWalls {
+    width: 60px;
+    height: 600px;
+    float: left;
+}
+
+#floor {
+    float: left;
+    height: 600px;
+    width: 990px;
+    background-image: url('../img/floor.gif');
+}
+
+#water1 {
+    width: 60px;
+    height: 600px;
+    float: left;
+}
+#water2 {
+    margin-top: -30px;
+    width: 60px;
+    height: 480px;
+    float: left;
+}
+#home_wall1 {
+    width: 630px;
+    margin-top: 60px;
+    margin-left: 120px;
+}
+
+#downWalls {
+    float: left;
+    height: 60px;
+    width: 1110px;
+}
+#grass1 {
+    margin-top: -30px;
+    float: right;
+    height: 540px;
+    width: 180px;
+}
+.water {
+    float: left;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/water.gif');
+}
+.grass {
+    float: left;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/grass.png');
+}
+.wall {
+    float: left;
+    height: 30px;
+    width: 30px;
+    background-image: url('../img/qiang/wall.gif');
+}
+
+.wall2 {
+    float: left;
+    height: 30px;
+    width: 30px;
+    background-image: url('../img/qiang/tugai.net.20101117134209.gif');
+}
+
+.tank {
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/tanke/enemy3U.gif');
+}
+
+.bullet {
+    height: 30px;
+    width: 30px;
+    background-image: url('../img/tankmissile.gif');
+}
