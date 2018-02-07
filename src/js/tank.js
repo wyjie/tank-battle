@@ -36,33 +36,53 @@ class Tank extends Component
             <div class="tank" style="margin-left:${this.x}px; margin-top:${this.y}px" data-tank-id=${tank_id}></div>
         `);
         //添加移动事件
-        this.el.addEventListener('keyWord', this.run.bind(this));
+        this.el.addEventListener('keydown', this.run.bind(this, event), false);
 
         return this.el;
     }
 
-    run () {
-
+    //核能发动机，斜眼笑
+    run (event) {
+        console.log(keyCode);
+        const keyCode = event.keyCode;
+        switch (keyCode) {
+            case 37:
+                this.left();
+                break;
+            case 38:
+                this.up();
+                break;
+            case 39:
+                this.right();
+                break;
+            case 40:
+                this.down();
+                break;
+            default:
+                break;
+        }
     }
 
     //秘技，反复横跳~上移
     up() {
-        //你打不到我的脸哦.略略略 
+        //你打不到我的脸哦.略略略
+        this.y -= this.runSpeed;
+        console.log(this.y);
     }
 
     //秘技，反复横跳~下移
     down() {
-
+        this.y += this.runSpeed;
     }
 
     //秘技，反复横跳~往左走
     left() {
-
+        this.x -= this.runSpeed;
     }
 
     //秘技，反复横跳~往右走
     right() {
-
+        this.y -= this.runSpeed;
     }
 
 

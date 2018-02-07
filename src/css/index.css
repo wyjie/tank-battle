@@ -24,7 +24,7 @@
     float: left;
     height: 600px;
     width: 990px;
-    background-image: url('../img/floor.gif');
+    background: #000;
 }
 
 #water1 {
