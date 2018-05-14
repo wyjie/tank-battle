@@ -18,7 +18,7 @@ class Tank extends Component
             this.bullet.count--;
         }
     }
-
+    
     //啊!宝宝被打中了
     shutdown ({bullet: bullet}) {
         //子弹坐标与坦克坐标重合
