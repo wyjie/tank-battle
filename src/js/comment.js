@@ -57,12 +57,6 @@ const tankInit = (wrapper) => {
     wrapper.appendChild(tank.render());
 
     tank.onStateChange = (oldElement, newElement) => {
-        console.log("旧的节点:");
-        console.log(oldElement);
-
-        console.log("新的节点:");
-        console.log(newElement);
-
         wrapper.insertBefore(newElement, oldElement);
         wrapper.removeChild(oldElement);
     }
