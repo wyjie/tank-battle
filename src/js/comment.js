@@ -49,11 +49,26 @@ const getWater = (element, type, count) => {
 }
 
 //生成己方坦克
-const tankInit = () => {
+const tankInit = (wrapper) => {
     //子弹
     const bullet = {type: 1, count: 'x'};
     const tank = new Tank({x: 420, y: 535, life: 5, bullet: bullet, launchSpeed: 20, runSpeed: 30});
-    const floor = document.querySelector('#floor');
 
-    floor.appendChild(tank.render());
+    wrapper.appendChild(tank.render());
+
+    tank.onStateChange = (oldElement, newElement) => {
+        console.log("旧的节点:");
+        console.log(oldElement);
+
+        console.log("新的节点:");
+        console.log(newElement);
+
+        wrapper.insertBefore(newElement, oldElement);
+        wrapper.removeChild(oldElement);
+    }
+
+    //移动
+    window.onkeydown = (event) => {
+        tank.run(event);
+    }
 }

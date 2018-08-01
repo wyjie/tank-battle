@@ -1,5 +1,6 @@
 class Grass extends Component
 {
+
     constructor () {
         super();
     }

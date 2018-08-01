@@ -16,6 +16,7 @@
             <div id="home_wall1"></div>
             <div id="water2"></div>
             <div id="grass1"></div>
+            <div id="tank"></div>
         </div>
         <div id="rightWalls"></div>
         <div id="downWalls"></div>
@@ -66,7 +67,8 @@
     //homeInit();
 
     //二营长，把我的意大利炮推上来! Italian gun~ (生成己方坦克，出生点固定)
-    tankInit();
+    const tankDiv = document.querySelector('#tank');
+    const myTank = tankInit(tankDiv);
 
     //生成敌方坦克，　出生点随机(敌方区域)
     //randTank();
